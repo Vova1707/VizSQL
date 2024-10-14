@@ -42,12 +42,24 @@ class Database_With_Users:
 
 
 class User_Database:
-    def __init__(self, user_name, db_name):
-        self.connection = sqlite3.connect(f'users/{user_name}/databases/{db_name}.db')
+    def __init__(self, user_login, name_database):
+        self.connection = sqlite3.connect(f'users/{user_login}/databases/{name_database}.db')
         self.cursor = self.connection.cursor()
+        self.create_table()
 
     def create_table(self):
-        pass
+        self.cursor.execute(
+            '''CREATE TABLE IF NOT EXISTS users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT NOT NULL,
+                login TEXT NOT NULL UNIQUE,
+                password TEXT NOT NULL)
+            '''
+        )
+        self.connection.commit()
 
     def delete_table(self):
         pass
+
+    def close(self):
+        self.connection.close()

@@ -3,7 +3,7 @@ import os
 from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog, QFileDialog, QMessageBox
 from PyQt6.QtGui import QPixmap
 from Main_Window import Ui_Main
-from DataBases import Database_With_Users
+from DataBases import Database_With_Users, User_Database
 from Profile import Ui_Profile
 from PIL import Image
 
@@ -16,6 +16,7 @@ class Visual_PO_for_DB(QMainWindow, Ui_Main):
         self.users = Database_With_Users()
 
     def initUI(self):
+        self.setWindowTitle('VizSQL')
         self.newuser_button_2.clicked.connect(self.open_page_registration)
         self.newuser_button.clicked.connect(self.log_in_new_user)
         self.log_in_button.clicked.connect(self.log_in)
@@ -85,6 +86,25 @@ class Visual_PO_for_DB(QMainWindow, Ui_Main):
         self.VizSQL.setCurrentIndex(2)
         self.directory = f'users/{self.user[2]}'
         print(self.user)
+        self.down_menu.setCurrentIndex(0)
+        self.createdatabase_button.clicked.connect(lambda _: self.down_menu.setCurrentIndex(3))
+        self.save_new_database_button.clicked.connect(self.create_user_databases)
+
+    def create_user_databases(self):
+        if self.check_new_database.isChecked():
+            if self.name_new_database.text():
+                if not os.path.exists(f'{self.directory}/databases/{self.name_new_database.text()}.db'):
+                    self.user_db = User_Database(self.user[2], self.name_new_database.text())
+                    QMessageBox.information(self, "Создание завершено", f"База данных {self.name_new_database.text()} создана")
+                    self.name_new_database.setText('')
+                    self.check_new_database.setChecked(False)
+                    self.down_menu.setCurrentIndex(0)
+                else:
+                    self.error_create_database_text.setText('База данных с таким названием уже существует')
+            else:
+                self.error_create_database_text.setText('Введите название вашей базы данных')
+        else:
+            self.error_create_database_text.setText('Нажмите на квадратик')
 
     def log_in(self):
         if self.users.find_user(self.login.text(), self.password.text()) and self.login.text() != '' and self.password.text() != '':
@@ -112,9 +132,9 @@ class Visual_PO_for_DB(QMainWindow, Ui_Main):
 
 
     def create_users_directory(self):
-        os.makedirs(f'{os.getcwd()}/users/{self.user[1]}')
-        os.makedirs(f'{os.getcwd()}/users/{self.user[1]}/databases')
-        os.makedirs(f'{os.getcwd()}/users/{self.user[1]}/image_profile')
+        os.makedirs(f'{os.getcwd()}/users/{self.user[2]}')
+        os.makedirs(f'{os.getcwd()}/users/{self.user[2]}/databases')
+        os.makedirs(f'{os.getcwd()}/users/{self.user[2]}/image_profile')
 
 
 if __name__ == '__main__':
