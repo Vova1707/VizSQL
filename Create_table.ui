@@ -61,25 +61,6 @@
         <string>Название таблицы:</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="type_pole">
-       <property name="geometry">
-        <rect>
-         <x>60</x>
-         <y>320</y>
-         <width>161</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
-       </property>
-      </widget>
       <widget class="QLineEdit" name="name_table">
        <property name="geometry">
         <rect>
@@ -106,7 +87,7 @@
         <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="save_create_table">
+      <widget class="QPushButton" name="save_create_table_button">
        <property name="geometry">
         <rect>
          <x>660</x>
@@ -165,19 +146,6 @@ QPushButton:hover {
         <string>***Название выбранной базы данных</string>
        </property>
       </widget>
-      <widget class="QTableView" name="tableView">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>80</y>
-         <width>851</width>
-         <height>171</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
@@ -197,7 +165,7 @@ QPushButton:hover {
          <x>30</x>
          <y>320</y>
          <width>31</width>
-         <height>16</height>
+         <height>20</height>
         </rect>
        </property>
        <property name="text">
@@ -223,7 +191,7 @@ QPushButton:hover {
         <string>Создание полей таблицы</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="save_create_pole">
+      <widget class="QPushButton" name="save_create_pole_button">
        <property name="geometry">
         <rect>
          <x>680</x>
@@ -248,13 +216,13 @@ QPushButton:hover {
         <string>Добавить поле</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="newuser_password_3">
+      <widget class="QLineEdit" name="defaut">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>50</x>
          <y>360</y>
-         <width>161</width>
-         <height>151</height>
+         <width>221</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -272,131 +240,92 @@ QPushButton:hover {
         <rect>
          <x>10</x>
          <y>360</y>
-         <width>71</width>
-         <height>16</height>
+         <width>41</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>Комментарий:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_6">
-       <property name="geometry">
-        <rect>
-         <x>370</x>
-         <y>300</y>
-         <width>47</width>
-         <height>13</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Storage:</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioButton">
-       <property name="geometry">
-        <rect>
-         <x>430</x>
-         <y>300</y>
-         <width>82</width>
-         <height>17</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Virtual</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="geometry">
-        <rect>
-         <x>540</x>
-         <y>300</y>
-         <width>82</width>
-         <height>17</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Stored</string>
+        <string>Defaut:</string>
        </property>
       </widget>
       <widget class="QWidget" name="gridLayoutWidget_2">
        <property name="geometry">
         <rect>
-         <x>370</x>
-         <y>330</y>
-         <width>311</width>
+         <x>310</x>
+         <y>270</y>
+         <width>331</width>
          <height>80</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="1">
-         <widget class="QCheckBox" name="checkBox_2">
-          <property name="text">
-           <string>Not Null</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="1">
-         <widget class="QCheckBox" name="checkBox_6">
+         <widget class="QCheckBox" name="Unsignet">
           <property name="text">
            <string>Unsignet</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QCheckBox" name="checkBox_5">
+        <item row="0" column="1">
+         <widget class="QCheckBox" name="NotNull">
           <property name="text">
-           <string>Binary</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QCheckBox" name="checkBox">
-          <property name="text">
-           <string>Primary Key</string>
+           <string>Not Null</string>
           </property>
          </widget>
         </item>
         <item row="0" column="2">
-         <widget class="QCheckBox" name="checkBox_4">
+         <widget class="QCheckBox" name="Uniqure">
           <property name="text">
            <string>Uniqure</string>
           </property>
          </widget>
         </item>
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="PrimaryKey">
+          <property name="text">
+           <string>Primary Key</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="2">
-         <widget class="QCheckBox" name="checkBox_3">
+         <widget class="QCheckBox" name="Zerofill">
           <property name="text">
            <string>Zero Fill</string>
           </property>
          </widget>
         </item>
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="Binary">
+          <property name="text">
+           <string>Binary</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
-      <widget class="QCheckBox" name="checkBox_7">
+      <widget class="QTableWidget" name="table_with_pole">
        <property name="geometry">
         <rect>
-         <x>380</x>
-         <y>430</y>
-         <width>91</width>
-         <height>17</height>
+         <x>30</x>
+         <y>81</y>
+         <width>811</width>
+         <height>161</height>
         </rect>
        </property>
-       <property name="text">
-        <string>Auto increment</string>
+       <property name="styleSheet">
+        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_8">
+      <widget class="QComboBox" name="type_pole">
        <property name="geometry">
         <rect>
-         <x>480</x>
-         <y>430</y>
-         <width>70</width>
-         <height>17</height>
+         <x>60</x>
+         <y>320</y>
+         <width>161</width>
+         <height>22</height>
         </rect>
        </property>
-       <property name="text">
-        <string>Generate</string>
+       <property name="styleSheet">
+        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
        </property>
       </widget>
      </widget>

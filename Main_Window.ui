@@ -378,12 +378,12 @@ input[type=password] {
            <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="newuser_button">
+         <widget class="QPushButton" name="return_log_in_button">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>460</y>
-            <width>211</width>
+            <x>430</x>
+            <y>480</y>
+            <width>151</width>
             <height>51</height>
            </rect>
           </property>
@@ -400,7 +400,7 @@ QPushButton:hover {
     }</string>
           </property>
           <property name="text">
-           <string>Зарегистрироваться</string>
+           <string>Назад</string>
           </property>
          </widget>
          <widget class="QLabel" name="newuser_error_text">
@@ -423,6 +423,31 @@ QPushButton:hover {
           </property>
           <property name="text">
            <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="newuser_button_3">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>480</y>
+            <width>201</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    border: 2px solid #0f4266;
+    border-radius: 10px;
+    background: #227cbd;
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: #31c3d6;
+    }</string>
+          </property>
+          <property name="text">
+           <string>Зарегистрироваться</string>
           </property>
          </widget>
         </widget>

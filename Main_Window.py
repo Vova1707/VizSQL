@@ -152,7 +152,10 @@ class Ui_Main(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.newuser_password_2.sizePolicy().hasHeightForWidth())
         self.newuser_password_2.setSizePolicy(sizePolicy)
-        self.newuser_password_2.setStyleSheet("background: #fcfcf2;   border-radius: 10px;")
+        self.newuser_password_2.setStyleSheet("background: #fcfcf2;   border-radius: 10px;\n"
+"input[type=password] {\n"
+"  background: yellow;\n"
+"}")
         self.newuser_password_2.setObjectName("newuser_password_2")
         self.newuser_name = QtWidgets.QLineEdit(parent=self.widget_4)
         self.newuser_name.setGeometry(QtCore.QRect(300, 250, 300, 30))
@@ -162,9 +165,9 @@ class Ui_Main(object):
         self.newuser_login.setGeometry(QtCore.QRect(300, 300, 300, 30))
         self.newuser_login.setStyleSheet("background: #fcfcf2;   border-radius: 10px;")
         self.newuser_login.setObjectName("newuser_login")
-        self.newuser_button = QtWidgets.QPushButton(parent=self.widget_4)
-        self.newuser_button.setGeometry(QtCore.QRect(220, 460, 211, 51))
-        self.newuser_button.setStyleSheet("QPushButton {\n"
+        self.return_log_in_button = QtWidgets.QPushButton(parent=self.widget_4)
+        self.return_log_in_button.setGeometry(QtCore.QRect(430, 480, 151, 51))
+        self.return_log_in_button.setStyleSheet("QPushButton {\n"
 "    border: 2px solid #0f4266;\n"
 "    border-radius: 10px;\n"
 "    background: #227cbd;\n"
@@ -174,7 +177,7 @@ class Ui_Main(object):
 "QPushButton:hover {\n"
 "    background: #31c3d6;\n"
 "    }")
-        self.newuser_button.setObjectName("newuser_button")
+        self.return_log_in_button.setObjectName("return_log_in_button")
         self.newuser_error_text = QtWidgets.QLabel(parent=self.widget_4)
         self.newuser_error_text.setGeometry(QtCore.QRect(390, 410, 301, 41))
         font = QtGui.QFont()
@@ -184,6 +187,19 @@ class Ui_Main(object):
         self.newuser_error_text.setStyleSheet("color: #f00")
         self.newuser_error_text.setText("")
         self.newuser_error_text.setObjectName("newuser_error_text")
+        self.newuser_button_3 = QtWidgets.QPushButton(parent=self.widget_4)
+        self.newuser_button_3.setGeometry(QtCore.QRect(220, 480, 201, 51))
+        self.newuser_button_3.setStyleSheet("QPushButton {\n"
+"    border: 2px solid #0f4266;\n"
+"    border-radius: 10px;\n"
+"    background: #227cbd;\n"
+"    padding: 5px;\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: #31c3d6;\n"
+"    }")
+        self.newuser_button_3.setObjectName("newuser_button_3")
         self.VizSQL.addWidget(self.Registration)
         self.main_menu = QtWidgets.QWidget()
         self.main_menu.setObjectName("main_menu")
@@ -672,7 +688,7 @@ class Ui_Main(object):
         Main.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Main)
-        self.VizSQL.setCurrentIndex(2)
+        self.VizSQL.setCurrentIndex(1)
         self.down_menu.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(Main)
 
@@ -690,7 +706,8 @@ class Ui_Main(object):
         self.PASSWORD_text_3.setText(_translate("Main", "Пароль:"))
         self.CHECK.setText(_translate("Main", "Нажмите на квадратик"))
         self.NAMEUSER_text_.setText(_translate("Main", "Имя:"))
-        self.newuser_button.setText(_translate("Main", "Зарегистрироваться"))
+        self.return_log_in_button.setText(_translate("Main", "Назад"))
+        self.newuser_button_3.setText(_translate("Main", "Зарегистрироваться"))
         self.createtable_button.setText(_translate("Main", "Создать Таблицу"))
         self.createdatabase_button.setText(_translate("Main", "Создать Базу Данных"))
         self.mydatabase_button.setText(_translate("Main", "Мои Базы Данных"))
