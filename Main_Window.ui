@@ -42,7 +42,7 @@
         <string notr="true">b</string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="Log_in">
         <widget class="QWidget" name="widget" native="true">
@@ -758,7 +758,7 @@ QPushButton:hover {
          <widget class="QPushButton" name="Log_out_button">
           <property name="geometry">
            <rect>
-            <x>640</x>
+            <x>670</x>
             <y>20</y>
             <width>70</width>
             <height>40</height>
@@ -783,7 +783,7 @@ QPushButton:hover {
          <widget class="QPushButton" name="profile_button">
           <property name="geometry">
            <rect>
-            <x>550</x>
+            <x>600</x>
             <y>20</y>
             <width>70</width>
             <height>40</height>
@@ -803,6 +803,31 @@ QPushButton:hover {
           </property>
           <property name="text">
            <string>Профиль</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mydatabase_button_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>71</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    border: 2px solid #0f4266;
+    border-radius: 10px;
+    background: #227cbd;
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: #31c3d6;
+    }</string>
+          </property>
+          <property name="text">
+           <string>Загрузить</string>
           </property>
          </widget>
         </widget>

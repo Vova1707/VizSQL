@@ -43,8 +43,8 @@
       <widget class="QLabel" name="PASSWORD_text_3">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>30</y>
+         <x>10</x>
+         <y>360</y>
          <width>131</width>
          <height>30</height>
         </rect>
@@ -64,8 +64,8 @@
       <widget class="QLineEdit" name="name_table">
        <property name="geometry">
         <rect>
-         <x>240</x>
-         <y>30</y>
+         <x>10</x>
+         <y>390</y>
          <width>201</width>
          <height>31</height>
         </rect>
@@ -77,9 +77,9 @@
       <widget class="QLineEdit" name="name_pole">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>410</x>
          <y>290</y>
-         <width>181</width>
+         <width>121</width>
          <height>21</height>
         </rect>
        </property>
@@ -90,10 +90,10 @@
       <widget class="QPushButton" name="save_create_table_button">
        <property name="geometry">
         <rect>
-         <x>660</x>
-         <y>260</y>
-         <width>191</width>
-         <height>31</height>
+         <x>10</x>
+         <y>430</y>
+         <width>201</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -115,8 +115,8 @@ QPushButton:hover {
       <widget class="QLabel" name="PASSWORD_text_4">
        <property name="geometry">
         <rect>
-         <x>460</x>
-         <y>30</y>
+         <x>10</x>
+         <y>320</y>
          <width>91</width>
          <height>30</height>
         </rect>
@@ -136,9 +136,9 @@ QPushButton:hover {
       <widget class="QLabel" name="name_used_database">
        <property name="geometry">
         <rect>
-         <x>560</x>
-         <y>30</y>
-         <width>211</width>
+         <x>110</x>
+         <y>320</y>
+         <width>201</width>
          <height>31</height>
         </rect>
        </property>
@@ -149,7 +149,7 @@ QPushButton:hover {
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>30</x>
+         <x>320</x>
          <y>290</y>
          <width>81</width>
          <height>16</height>
@@ -162,10 +162,10 @@ QPushButton:hover {
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>30</x>
+         <x>320</x>
          <y>320</y>
-         <width>31</width>
-         <height>20</height>
+         <width>21</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="text">
@@ -175,14 +175,15 @@ QPushButton:hover {
       <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>260</y>
-         <width>161</width>
-         <height>16</height>
+         <x>440</x>
+         <y>265</y>
+         <width>171</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -194,10 +195,10 @@ QPushButton:hover {
       <widget class="QPushButton" name="save_create_pole_button">
        <property name="geometry">
         <rect>
-         <x>680</x>
-         <y>440</y>
-         <width>151</width>
-         <height>41</height>
+         <x>530</x>
+         <y>460</y>
+         <width>331</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -216,52 +217,20 @@ QPushButton:hover {
         <string>Добавить поле</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="defaut">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>360</y>
-         <width>221</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_5">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>360</y>
-         <width>41</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Defaut:</string>
-       </property>
-      </widget>
       <widget class="QWidget" name="gridLayoutWidget_2">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>270</y>
-         <width>331</width>
-         <height>80</height>
+         <x>530</x>
+         <y>330</y>
+         <width>321</width>
+         <height>71</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="1">
-         <widget class="QCheckBox" name="Unsignet">
+        <item row="0" column="2">
+         <widget class="QCheckBox" name="Uniqure">
           <property name="text">
-           <string>Unsignet</string>
+           <string>Uniqure</string>
           </property>
          </widget>
         </item>
@@ -272,24 +241,10 @@ QPushButton:hover {
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
-         <widget class="QCheckBox" name="Uniqure">
+        <item row="1" column="1">
+         <widget class="QCheckBox" name="Unsignet">
           <property name="text">
-           <string>Uniqure</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QCheckBox" name="PrimaryKey">
-          <property name="text">
-           <string>Primary Key</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QCheckBox" name="Zerofill">
-          <property name="text">
-           <string>Zero Fill</string>
+           <string>Unsignet</string>
           </property>
          </widget>
         </item>
@@ -300,15 +255,29 @@ QPushButton:hover {
           </property>
          </widget>
         </item>
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="AutoIncrement">
+          <property name="text">
+           <string>AutoIncrement</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QCheckBox" name="Zerofill">
+          <property name="text">
+           <string>Zero Fill</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QTableWidget" name="table_with_pole">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>81</y>
-         <width>811</width>
-         <height>161</height>
+         <x>10</x>
+         <y>10</y>
+         <width>851</width>
+         <height>251</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -318,14 +287,210 @@ QPushButton:hover {
       <widget class="QComboBox" name="type_pole">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>320</y>
-         <width>161</width>
+         <x>350</x>
+         <y>318</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="pole_ForeignKey">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>490</y>
+         <width>131</width>
          <height>22</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>460</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Таблица:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="table_ForeignKey">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>460</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>490</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Поле:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>344</y>
+         <width>41</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Ключ</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>290</y>
+         <width>161</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Другие характеристики</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>410</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Defaut(Значение по умолчанию)</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Defaut">
+       <property name="geometry">
+        <rect>
+         <x>740</x>
+         <y>410</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="PASSWORD_text_5">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>270</y>
+         <width>131</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft JhengHei</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Создание таблицы</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>370</y>
+         <width>181</width>
+         <height>65</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QRadioButton" name="Not_Key">
+          <property name="text">
+           <string>Не является ключом</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="PrimaryKey_Button">
+          <property name="text">
+           <string>Основной ключ (Primary Key)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="ForeignKey_Button_2">
+          <property name="text">
+           <string>Внешний ключ (Foreign Key)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>440</y>
+         <width>211</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Характеристики внешнего ключа</string>
        </property>
       </widget>
      </widget>

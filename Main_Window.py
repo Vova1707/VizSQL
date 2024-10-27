@@ -345,7 +345,7 @@ class Ui_Main(object):
         self.widget_2.setStyleSheet("background: #1f8ddb")
         self.widget_2.setObjectName("widget_2")
         self.Log_out_button = QtWidgets.QPushButton(parent=self.widget_2)
-        self.Log_out_button.setGeometry(QtCore.QRect(640, 20, 70, 40))
+        self.Log_out_button.setGeometry(QtCore.QRect(670, 20, 70, 40))
         self.Log_out_button.setStyleSheet("QPushButton {\n"
 "    border: 2px solid #000;\n"
 "    border-radius: 10px;\n"
@@ -358,7 +358,7 @@ class Ui_Main(object):
 "    }")
         self.Log_out_button.setObjectName("Log_out_button")
         self.profile_button = QtWidgets.QPushButton(parent=self.widget_2)
-        self.profile_button.setGeometry(QtCore.QRect(550, 20, 70, 40))
+        self.profile_button.setGeometry(QtCore.QRect(600, 20, 70, 40))
         self.profile_button.setStyleSheet("QPushButton {\n"
 "    border: 2px solid #0f4266;\n"
 "    border-radius: 10px;\n"
@@ -370,6 +370,19 @@ class Ui_Main(object):
 "    background: #31c3d6;\n"
 "    }")
         self.profile_button.setObjectName("profile_button")
+        self.mydatabase_button_2 = QtWidgets.QPushButton(parent=self.widget_2)
+        self.mydatabase_button_2.setGeometry(QtCore.QRect(10, 20, 71, 41))
+        self.mydatabase_button_2.setStyleSheet("QPushButton {\n"
+"    border: 2px solid #0f4266;\n"
+"    border-radius: 10px;\n"
+"    background: #227cbd;\n"
+"    padding: 5px;\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: #31c3d6;\n"
+"    }")
+        self.mydatabase_button_2.setObjectName("mydatabase_button_2")
         self.widget_3 = QtWidgets.QWidget(parent=self.main_menu)
         self.widget_3.setGeometry(QtCore.QRect(210, -1, 101, 391))
         self.widget_3.setStyleSheet("background: #1f8ddb")
@@ -688,7 +701,7 @@ class Ui_Main(object):
         Main.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Main)
-        self.VizSQL.setCurrentIndex(1)
+        self.VizSQL.setCurrentIndex(2)
         self.down_menu.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(Main)
 
@@ -722,6 +735,7 @@ class Ui_Main(object):
         self.save_database.setText(_translate("Main", "Сохранить"))
         self.Log_out_button.setText(_translate("Main", "Выход"))
         self.profile_button.setText(_translate("Main", "Профиль"))
+        self.mydatabase_button_2.setText(_translate("Main", "Загрузить"))
         self.label_13.setText(_translate("Main", "Инструменты"))
         self.label_28.setText(_translate("Main", "Базы данных"))
         self.label_29.setText(_translate("Main", "Таблицы"))

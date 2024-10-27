@@ -37,7 +37,10 @@ class Database_With_Users:
         query = "SELECT * FROM users WHERE login = ? AND password = ?"
         self.cursor.execute(query, (login, password))
         user = self.cursor.fetchone()
-        return user
+        if user:
+            return user
+        else:
+            return False
 
     def close(self):
         self.connection.close()
@@ -50,18 +53,6 @@ class User_Database:
         self.connection = sqlite3.connect(f'users/{user_login}/databases/{name_database}')
         self.cursor = self.connection.cursor()
         self.name = name_database
-        self.create_table()
-
-    def create_table(self):
-        self.cursor.execute(
-            '''CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT NOT NULL,
-                login TEXT NOT NULL UNIQUE,
-                password TEXT NOT NULL)
-            '''
-        )
-        self.connection.commit()
 
     def create_custom_table(self, table_name, fields_with_properties):
         pols = []
@@ -89,6 +80,16 @@ class User_Database:
         except Exception as d:
             print(d.__class__.__name__)
 
+    def get_tables(self):
+        self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tables = self.cursor.fetchall()
+        return tables
+
+    def get_primary_key_tables(self, table_name):
+        self.cursor.execute(f"PRAGMA table_info({table_name})")
+        info = self.cursor.fetchall()
+        primary_keys = [pole[1] for pole in info if pole[5] and pole[2].upper() == 'INTEGER']
+        return primary_keys
 
     def load_tables_from_db(self, scene):
         self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
@@ -97,11 +98,11 @@ class User_Database:
         for table in tables:
             table_name = table[0]
             self.cursor.execute(f'PRAGMA table_info({table_name});')
-            fields_info = self.cursor.fetchall()
-            fields = [f"{field[1]}: {field[2]}" for field in fields_info]
-            table_item = TableModelItem(table_name, fields)
-            scene.addItem(table_item)
-            table_item.setPos(20, 20 + len(scene.items()) * 120)
+            pole = self.cursor.fetchall()
+            pols = [f"{info[1]}: {info[2]}" for info in pole]
+            table = TableModelItem(table_name, pols)
+            scene.addItem(table)
+            table.setPos(20, 20 + len(scene.items()) * 120)
 
     def delete_table(self):
         pass
@@ -113,9 +114,10 @@ class User_Database:
         return self.name
 
 
+
 class TableModelItem(QGraphicsRectItem):
     def __init__(self, table_name, fields):
-        super().__init__(0, 0, 150, 300)
+        super().__init__(0, 0, 150, 60 + 20 * len(fields))
         self.setBrush(QBrush(QColor(200, 200, 255)))
         self.setFlag(QGraphicsRectItem.GraphicsItemFlag.ItemIsMovable)
         self.table_title = QGraphicsTextItem(table_name, self)
