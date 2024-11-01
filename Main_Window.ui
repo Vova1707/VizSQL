@@ -805,7 +805,7 @@ QPushButton:hover {
            <string>Профиль</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="mydatabase_button_2">
+         <widget class="QPushButton" name="download_button">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -856,7 +856,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-плюс-30.png</normaloff>:/newPrefix/icons8-плюс-30.png</iconset>
           </property>
          </widget>
@@ -873,7 +873,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-удалить-24.png</normaloff>:/newPrefix/icons8-удалить-24.png</iconset>
           </property>
          </widget>
@@ -890,7 +890,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-плюс-30.png</normaloff>:/newPrefix/icons8-плюс-30.png</iconset>
           </property>
          </widget>
@@ -965,7 +965,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-удалить-24.png</normaloff>:/newPrefix/icons8-удалить-24.png</iconset>
           </property>
          </widget>
@@ -1001,7 +1001,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-профиль-50.png</normaloff>:/newPrefix/icons8-профиль-50.png</iconset>
           </property>
          </widget>
@@ -1018,7 +1018,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-сохранить-50.png</normaloff>:/newPrefix/icons8-сохранить-50.png</iconset>
           </property>
           <property name="iconSize">
@@ -1041,7 +1041,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-выход-64.png</normaloff>:/newPrefix/icons8-выход-64.png</iconset>
           </property>
           <property name="iconSize">
@@ -1064,7 +1064,7 @@ QPushButton:hover {
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Downloads/123.qrc">
+           <iconset>
             <normaloff>:/newPrefix/icons8-код-50.png</normaloff>:/newPrefix/icons8-код-50.png</iconset>
           </property>
          </widget>
@@ -1082,7 +1082,7 @@ QPushButton:hover {
           <string notr="true">background: #1f8ddb</string>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="page"/>
          <widget class="QWidget" name="database_change">
@@ -1286,7 +1286,7 @@ QPushButton:hover {
             <string>ознакомлен с условиями</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="code_button_2">
+          <widget class="QPushButton" name="delete_button_button_save">
            <property name="geometry">
             <rect>
              <x>80</x>
@@ -1464,7 +1464,7 @@ QPushButton:hover {
           </widget>
          </widget>
          <widget class="QWidget" name="page_2">
-          <widget class="QPushButton" name="code_button_3">
+          <widget class="QPushButton" name="delete_and_save_table">
            <property name="geometry">
             <rect>
              <x>50</x>
@@ -1521,19 +1521,6 @@ QPushButton:hover {
             <string>Выберете таблицу:</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="name_new_database_2">
-           <property name="geometry">
-            <rect>
-             <x>110</x>
-             <y>105</y>
-             <width>131</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background: #fcfcf2;   border-radius: 10px</string>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_25">
            <property name="geometry">
             <rect>
@@ -1577,7 +1564,7 @@ QPushButton:hover {
             <string>База данных:</string>
            </property>
           </widget>
-          <widget class="QLabel" name="name_used_database_2">
+          <widget class="QLabel" name="name_used_database_delete_table">
            <property name="geometry">
             <rect>
              <x>110</x>
@@ -1590,7 +1577,7 @@ QPushButton:hover {
             <string>***Название выбранной базы данных</string>
            </property>
           </widget>
-          <widget class="QCheckBox" name="checkBox_10">
+          <widget class="QCheckBox" name="delete_check">
            <property name="geometry">
             <rect>
              <x>10</x>
@@ -1647,6 +1634,19 @@ QPushButton:hover {
             <string>Вы больше не сможете использовать</string>
            </property>
           </widget>
+          <widget class="QComboBox" name="table_delete">
+           <property name="geometry">
+            <rect>
+             <x>125</x>
+             <y>105</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background: #fcfcf2;   border-radius: 10px;</string>
+           </property>
+          </widget>
          </widget>
         </widget>
         <widget class="QGraphicsView" name="graphicsView">
@@ -1669,8 +1669,6 @@ QPushButton:hover {
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="../../Downloads/123.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

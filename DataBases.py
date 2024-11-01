@@ -1,7 +1,4 @@
 import sqlite3
-from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog, QFileDialog, QMessageBox, QTableWidgetItem, QGraphicsView, QGraphicsScene, QGraphicsRectItem, QGraphicsTextItem
-from PyQt6.QtGui import QBrush, QColor
-
 
 class Database_With_Users:
     def __init__(self, name='users.db'):
@@ -48,37 +45,55 @@ class Database_With_Users:
 
 
 
+
 class User_Database:
     def __init__(self, user_login, name_database):
         self.connection = sqlite3.connect(f'users/{user_login}/databases/{name_database}')
         self.cursor = self.connection.cursor()
         self.name = name_database
 
-    def create_custom_table(self, table_name, fields_with_properties):
+    def create_table(self, table_name, polses):
         pols = []
-        for field_name, properties in fields_with_properties.items():
-            column_definition = field_name + ' ' + properties['type']
-            if properties['primary_key']:
-                column_definition += ' PRIMARY KEY'
-            if properties['not_null']:
-                column_definition += ' NOT NULL'
-            if properties['unique']:
-                column_definition += ' UNIQUE'
-            if properties['binary']:
-                column_definition += ' BLOB'
-            if properties['unsigned']:
-                column_definition += ' UNSIGNED'
-            if properties['zero_fill']:
-                column_definition += ' ZEROFILL'
-
-            pols.append(column_definition)
-
-        create_table_query = f'CREATE TABLE IF NOT EXISTS {table_name} (' + ', '.join(pols) + ')'
+        foreign_key = []
+        for pole in polses:
+            pole_text = pole['название'] + ' ' + pole['тип']
+            if pole['ключ'] == 'Первичный':
+                pole_text += ' PRIMARY KEY'
+            elif pole['ключ'] == 'Вторичный':
+                pole_text += ' PRIMARY KEY'
+                foreign_key.append(
+                    f'FOREIGN KEY ({pole['название']}) REFERENCES {pole['Таблица первичного ключа']}({pole['Поле первичного ключа']})')
+            else:
+                if pole['Not Null']:
+                    pole_text += ' NOT NULL'
+                if pole['AutoIncrement']:
+                    pole_text += ' AUTOINCREMENT'
+                if pole['Binary']:
+                    pole_text += ' BINARY'
+                if pole['Unsignet']:
+                    pole_text += ' UNSIGNET'
+                if pole['Zero Fill']:
+                    pole_text += ' ZERO FILL'
+            pols.append(pole_text)
+        create_table = f'CREATE TABLE IF NOT EXISTS {table_name} (' + ', '.join(pols + foreign_key) + ')'
         try:
-            self.cursor.execute(create_table_query)
+            self.cursor.execute(create_table)
             self.connection.commit()
+            return True
+        except Exception as d:
+            print(create_table)
+            print(d.__class__.__name__)
+            return False
+
+
+    def delete_table(self, name):
+        try:
+            self.cursor.execute(f'''DROP TABLE {name}''')
+            self.connection.commit()
+            return True
         except Exception as d:
             print(d.__class__.__name__)
+            return False
 
     def get_tables(self):
         self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
@@ -91,38 +106,16 @@ class User_Database:
         primary_keys = [pole[1] for pole in info if pole[5] and pole[2].upper() == 'INTEGER']
         return primary_keys
 
-    def load_tables_from_db(self, scene):
-        self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-        tables = self.cursor.fetchall()
+    def table_info(self, table_name):
+        self.cursor.execute(f'PRAGMA table_info({table_name});').fetchall()
 
-        for table in tables:
-            table_name = table[0]
-            self.cursor.execute(f'PRAGMA table_info({table_name});')
-            pole = self.cursor.fetchall()
-            pols = [f"{info[1]}: {info[2]}" for info in pole]
-            table = TableModelItem(table_name, pols)
-            scene.addItem(table)
-            table.setPos(20, 20 + len(scene.items()) * 120)
-
-    def delete_table(self):
-        pass
+    def get_foreign_keys(self, table_name):
+        self.cursor.execute(f"PRAGMA foreign_key_list({table_name})")
+        a = self.cursor.fetchall()
+        return a
 
     def close(self):
         self.connection.close()
 
     def get_name(self):
         return self.name
-
-
-
-class TableModelItem(QGraphicsRectItem):
-    def __init__(self, table_name, fields):
-        super().__init__(0, 0, 150, 60 + 20 * len(fields))
-        self.setBrush(QBrush(QColor(200, 200, 255)))
-        self.setFlag(QGraphicsRectItem.GraphicsItemFlag.ItemIsMovable)
-        self.table_title = QGraphicsTextItem(table_name, self)
-        self.table_title.setPos(10, 10)
-
-        for i, field in enumerate(fields):
-            field_item = QGraphicsTextItem(field, self)
-            field_item.setPos(10, 30 + i * 20)

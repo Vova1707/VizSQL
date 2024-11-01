@@ -370,9 +370,9 @@ class Ui_Main(object):
 "    background: #31c3d6;\n"
 "    }")
         self.profile_button.setObjectName("profile_button")
-        self.mydatabase_button_2 = QtWidgets.QPushButton(parent=self.widget_2)
-        self.mydatabase_button_2.setGeometry(QtCore.QRect(10, 20, 71, 41))
-        self.mydatabase_button_2.setStyleSheet("QPushButton {\n"
+        self.download_button = QtWidgets.QPushButton(parent=self.widget_2)
+        self.download_button.setGeometry(QtCore.QRect(10, 20, 71, 41))
+        self.download_button.setStyleSheet("QPushButton {\n"
 "    border: 2px solid #0f4266;\n"
 "    border-radius: 10px;\n"
 "    background: #227cbd;\n"
@@ -382,7 +382,7 @@ class Ui_Main(object):
 "QPushButton:hover {\n"
 "    background: #31c3d6;\n"
 "    }")
-        self.mydatabase_button_2.setObjectName("mydatabase_button_2")
+        self.download_button.setObjectName("download_button")
         self.widget_3 = QtWidgets.QWidget(parent=self.main_menu)
         self.widget_3.setGeometry(QtCore.QRect(210, -1, 101, 391))
         self.widget_3.setStyleSheet("background: #1f8ddb")
@@ -551,9 +551,9 @@ class Ui_Main(object):
         self.checkBox = QtWidgets.QCheckBox(parent=self.delete_table)
         self.checkBox.setGeometry(QtCore.QRect(10, 190, 161, 20))
         self.checkBox.setObjectName("checkBox")
-        self.code_button_2 = QtWidgets.QPushButton(parent=self.delete_table)
-        self.code_button_2.setGeometry(QtCore.QRect(80, 230, 191, 31))
-        self.code_button_2.setStyleSheet("QPushButton {\n"
+        self.delete_button_button_save = QtWidgets.QPushButton(parent=self.delete_table)
+        self.delete_button_button_save.setGeometry(QtCore.QRect(80, 230, 191, 31))
+        self.delete_button_button_save.setStyleSheet("QPushButton {\n"
 "    border: 2px solid #0f4266;\n"
 "    border-radius: 10px;\n"
 "    background: #227cbd;\n"
@@ -563,7 +563,7 @@ class Ui_Main(object):
 "QPushButton:hover {\n"
 "    background: #31c3d6;\n"
 "    }")
-        self.code_button_2.setObjectName("code_button_2")
+        self.delete_button_button_save.setObjectName("delete_button_button_save")
         self.down_menu.addWidget(self.delete_table)
         self.create_database = QtWidgets.QWidget()
         self.create_database.setObjectName("create_database")
@@ -625,9 +625,9 @@ class Ui_Main(object):
         self.down_menu.addWidget(self.create_database)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
-        self.code_button_3 = QtWidgets.QPushButton(parent=self.page_2)
-        self.code_button_3.setGeometry(QtCore.QRect(50, 280, 191, 31))
-        self.code_button_3.setStyleSheet("QPushButton {\n"
+        self.delete_and_save_table = QtWidgets.QPushButton(parent=self.page_2)
+        self.delete_and_save_table.setGeometry(QtCore.QRect(50, 280, 191, 31))
+        self.delete_and_save_table.setStyleSheet("QPushButton {\n"
 "    border: 2px solid #0f4266;\n"
 "    border-radius: 10px;\n"
 "    background: #227cbd;\n"
@@ -637,7 +637,7 @@ class Ui_Main(object):
 "QPushButton:hover {\n"
 "    background: #31c3d6;\n"
 "    }")
-        self.code_button_3.setObjectName("code_button_3")
+        self.delete_and_save_table.setObjectName("delete_and_save_table")
         self.label = QtWidgets.QLabel(parent=self.page_2)
         self.label.setGeometry(QtCore.QRect(90, 10, 121, 31))
         font = QtGui.QFont()
@@ -648,10 +648,6 @@ class Ui_Main(object):
         self.label_24 = QtWidgets.QLabel(parent=self.page_2)
         self.label_24.setGeometry(QtCore.QRect(10, 100, 121, 31))
         self.label_24.setObjectName("label_24")
-        self.name_new_database_2 = QtWidgets.QLineEdit(parent=self.page_2)
-        self.name_new_database_2.setGeometry(QtCore.QRect(110, 105, 131, 21))
-        self.name_new_database_2.setStyleSheet("background: #fcfcf2;   border-radius: 10px")
-        self.name_new_database_2.setObjectName("name_new_database_2")
         self.label_25 = QtWidgets.QLabel(parent=self.page_2)
         self.label_25.setGeometry(QtCore.QRect(10, 240, 171, 31))
         font = QtGui.QFont()
@@ -669,12 +665,12 @@ class Ui_Main(object):
         font.setWeight(75)
         self.PASSWORD_text_7.setFont(font)
         self.PASSWORD_text_7.setObjectName("PASSWORD_text_7")
-        self.name_used_database_2 = QtWidgets.QLabel(parent=self.page_2)
-        self.name_used_database_2.setGeometry(QtCore.QRect(110, 60, 211, 31))
-        self.name_used_database_2.setObjectName("name_used_database_2")
-        self.checkBox_10 = QtWidgets.QCheckBox(parent=self.page_2)
-        self.checkBox_10.setGeometry(QtCore.QRect(10, 210, 161, 20))
-        self.checkBox_10.setObjectName("checkBox_10")
+        self.name_used_database_delete_table = QtWidgets.QLabel(parent=self.page_2)
+        self.name_used_database_delete_table.setGeometry(QtCore.QRect(110, 60, 211, 31))
+        self.name_used_database_delete_table.setObjectName("name_used_database_delete_table")
+        self.delete_check = QtWidgets.QCheckBox(parent=self.page_2)
+        self.delete_check.setGeometry(QtCore.QRect(10, 210, 161, 20))
+        self.delete_check.setObjectName("delete_check")
         self.label_26 = QtWidgets.QLabel(parent=self.page_2)
         self.label_26.setGeometry(QtCore.QRect(10, 170, 201, 31))
         font = QtGui.QFont()
@@ -691,6 +687,10 @@ class Ui_Main(object):
         self.label_27.setFont(font)
         self.label_27.setStyleSheet("color: #f00")
         self.label_27.setObjectName("label_27")
+        self.table_delete = QtWidgets.QComboBox(parent=self.page_2)
+        self.table_delete.setGeometry(QtCore.QRect(125, 105, 101, 21))
+        self.table_delete.setStyleSheet("background: #fcfcf2;   border-radius: 10px;")
+        self.table_delete.setObjectName("table_delete")
         self.down_menu.addWidget(self.page_2)
         self.graphicsView = QtWidgets.QGraphicsView(parent=self.main_menu)
         self.graphicsView.setGeometry(QtCore.QRect(310, 70, 751, 651))
@@ -702,7 +702,7 @@ class Ui_Main(object):
 
         self.retranslateUi(Main)
         self.VizSQL.setCurrentIndex(2)
-        self.down_menu.setCurrentIndex(3)
+        self.down_menu.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(Main)
 
     def retranslateUi(self, Main):
@@ -735,7 +735,7 @@ class Ui_Main(object):
         self.save_database.setText(_translate("Main", "Сохранить"))
         self.Log_out_button.setText(_translate("Main", "Выход"))
         self.profile_button.setText(_translate("Main", "Профиль"))
-        self.mydatabase_button_2.setText(_translate("Main", "Загрузить"))
+        self.download_button.setText(_translate("Main", "Загрузить"))
         self.label_13.setText(_translate("Main", "Инструменты"))
         self.label_28.setText(_translate("Main", "Базы данных"))
         self.label_29.setText(_translate("Main", "Таблицы"))
@@ -749,19 +749,19 @@ class Ui_Main(object):
         self.label_16.setText(_translate("Main", "Вы больше не сможете использовать"))
         self.label_17.setText(_translate("Main", "Выбранную вами базу данных"))
         self.checkBox.setText(_translate("Main", "ознакомлен с условиями"))
-        self.code_button_2.setText(_translate("Main", "Удалить"))
+        self.delete_button_button_save.setText(_translate("Main", "Удалить"))
         self.save_new_database_button.setText(_translate("Main", "Сохранить"))
         self.label_4.setText(_translate("Main", "Создание базы данных"))
         self.check_new_database.setText(_translate("Main", "Ознокомлен с условиями"))
         self.label_7.setText(_translate("Main", "Название:"))
         self.label_11.setText(_translate("Main", "При создании или выборе новой базы данных"))
         self.label_12.setText(_translate("Main", "вы автоматически начинаете работать с ней"))
-        self.code_button_3.setText(_translate("Main", "Удалить"))
+        self.delete_and_save_table.setText(_translate("Main", "Удалить"))
         self.label.setText(_translate("Main", "Удаление таблицы"))
         self.label_24.setText(_translate("Main", "Выберете таблицу:"))
         self.label_25.setText(_translate("Main", "***Сообщение об ошибке"))
         self.PASSWORD_text_7.setText(_translate("Main", "База данных:"))
-        self.name_used_database_2.setText(_translate("Main", "***Название выбранной базы данных"))
-        self.checkBox_10.setText(_translate("Main", "ознакомлен с условиями"))
+        self.name_used_database_delete_table.setText(_translate("Main", "***Название выбранной базы данных"))
+        self.delete_check.setText(_translate("Main", "ознакомлен с условиями"))
         self.label_26.setText(_translate("Main", "Выбранную вами таблицу"))
         self.label_27.setText(_translate("Main", "Вы больше не сможете использовать"))

@@ -493,6 +493,28 @@ QPushButton:hover {
         <string>Характеристики внешнего ключа</string>
        </property>
       </widget>
+      <widget class="QLabel" name="error_create_table">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>480</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #f00</string>
+       </property>
+       <property name="text">
+        <string>Неккоректно введены данные полей или таблиц</string>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
